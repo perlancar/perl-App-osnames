@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+use 5.010001;
+use strict;
+use warnings;
+use Perinci::CmdLine 0.68;
+
+# VERSION
+
+our %SPEC;
+
+Perinci::CmdLine->new(url => '/App/osnames/list_osnames')->run;
+
+1;
+# ABSTRACT: List possible Perl $^O ($OSNAME) values
+# PODNAME: osnames
+
+=head1 SYNOPSIS
+
+ % osnames
+ % osnames --detail
+
+
+=head1 FAQ
+
+=head2 Lots of dependencies?
+
+Yup, sorry about that. I use L<Perinci::CmdLine> and
+L<Perinci::Sub::Gen::AccessTable> for convenience, where I just specify a data
+structure and let the aforementioned modules generate an access function and
+command-line interface for it.
+
+
+=head1 TODO
+
+
+=head1 SEE ALSO
+
+L<perlvar>
+
+=cut
