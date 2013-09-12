@@ -25,7 +25,7 @@ Perinci::CmdLine->new(url => '/App/osnames/list_osnames')->run;
 =head1 SYNOPSIS
 
  % osnames
- % osnames --detail
+ % osnames --detail; # or, -V
 
 
 =head1 FAQ
