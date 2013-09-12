@@ -1,5 +1,13 @@
 Revision history for App-osnames
 
+0.02    2013-09-12 (SHARYANTO)
+
+        - Add -V alias for --detail for convenience.
+
+        - Force use of Perinci::Sub::Gen::AccessTable 0.23 which hints correct
+          column order.
+
+
 0.01    2013-09-11 (SHARYANTO)
 
         - First release.
