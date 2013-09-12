@@ -77,7 +77,7 @@ for (@$data) {
 #use Data::Dump::Color;
 #dd $data;
 
-use Perinci::Sub::Gen::AccessTable 0.22 qw(gen_read_table_func);
+use Perinci::Sub::Gen::AccessTable 0.23 qw(gen_read_table_func);
 
 my $res = gen_read_table_func(
     name       => 'list_osnames',
@@ -108,17 +108,6 @@ _
             },
         },
         pk => 'value',
-    },
-    hooks => {
-        before_return => sub {
-            my %args = @_;
-            my $res = $args{_func_res};
-            my %rfopts = (
-                table_column_orders  => [[qw/value tags description/]],
-            );
-            $res->[3]{result_format_options}{text}          = \%rfopts;
-            $res->[3]{result_format_options}{"text-pretty"} = \%rfopts;
-        },
     },
 );
 die "Can't generate list_osnames function: $res->[0] - $res->[1]"
