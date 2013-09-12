@@ -9,6 +9,13 @@ use Perinci::CmdLine 0.68;
 
 our %SPEC;
 
+# add -V as the alias for --detail, for convenience
+require App::osnames;
+{
+    no warnings;
+    $App::osnames::SPEC{list_osnames}{args}{detail}{cmdline_aliases} = {V=>{}};
+}
+
 Perinci::CmdLine->new(url => '/App/osnames/list_osnames')->run;
 
 1;
