@@ -1,5 +1,12 @@
 Revision history for App-osnames
 
+0.03    2013-10-26 (SHARYANTO)
+
+        - Allow specifying query in first argument.
+
+        - Add examples.
+
+
 0.02    2013-09-12 (SHARYANTO)
 
         - Add -V alias for --detail for convenience.
