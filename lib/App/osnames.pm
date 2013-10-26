@@ -6,6 +6,8 @@ use warnings;
 
 # VERSION
 
+our %SPEC;
+
 our $data = [
 
     ['aix', [qw/unix sysv/], 'IBM AIX'],
@@ -112,6 +114,22 @@ _
 );
 die "Can't generate list_osnames function: $res->[0] - $res->[1]"
     unless $res->[0] == 200;
+
+$SPEC{list_osnames}{args}{q}{pos} = 0;
+$SPEC{list_osnames}{examples} = [
+    {
+        argv    => [qw/ux/],
+        summary => 'String search',
+    },
+    {
+        argv    => [qw/--tags-has unix --detail/],
+        summary => 'List Unices',
+    },
+    {
+        argv    => [qw/--tags-lacks unix --detail/],
+        summary => 'List non-Unices',
+    },
+];
 
 1;
 # ABSTRACT: List possible $^O ($OSNAME) values
