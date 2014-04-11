@@ -28,19 +28,6 @@ Perinci::CmdLine->new(url => '/App/osnames/list_osnames')->run;
  % osnames --detail; # or, -V
 
 
-=head1 FAQ
-
-=head2 Lots of dependencies?
-
-Yup, sorry about that. I use L<Perinci::CmdLine> and
-L<Perinci::Sub::Gen::AccessTable> for convenience, where I just specify a data
-structure and let the aforementioned modules generate an access function and
-command-line interface for it.
-
-
-=head1 TODO
-
-
 =head1 SEE ALSO
 
 L<perlvar>
