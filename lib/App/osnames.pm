@@ -111,6 +111,8 @@ _
         },
         pk => 'value',
     },
+    enable_paging => 0, # there are only a handful of rows
+    enable_random_ordering => 0,
 );
 die "Can't generate list_osnames function: $res->[0] - $res->[1]"
     unless $res->[0] == 200;
