@@ -5,6 +5,7 @@ use strict;
 use warnings;
 use Perinci::CmdLine 0.68;
 
+# DATE
 # VERSION
 
 our %SPEC;
@@ -16,7 +17,10 @@ require App::osnames;
     $App::osnames::SPEC{list_osnames}{args}{detail}{cmdline_aliases} = {V=>{}};
 }
 
-Perinci::CmdLine->new(url => '/App/osnames/list_osnames')->run;
+Perinci::CmdLine->new(
+    log_any_app => 0,
+    url => '/App/osnames/list_osnames',
+)->run;
 
 1;
 # ABSTRACT: List possible Perl $^O ($OSNAME) values
