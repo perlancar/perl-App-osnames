@@ -79,7 +79,7 @@ for (@$data) {
 #use Data::Dump::Color;
 #dd $data;
 
-use Perinci::Sub::Gen::AccessTable 0.23 qw(gen_read_table_func);
+use Perinci::Sub::Gen::AccessTable qw(gen_read_table_func);
 
 my $res = gen_read_table_func(
     name       => 'list_osnames',
