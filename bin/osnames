@@ -3,7 +3,7 @@
 use 5.010001;
 use strict;
 use warnings;
-use Perinci::CmdLine 0.68;
+use Perinci::CmdLine::Any;
 
 # DATE
 # VERSION
@@ -17,7 +17,7 @@ require App::osnames;
     $App::osnames::SPEC{list_osnames}{args}{detail}{cmdline_aliases} = {V=>{}};
 }
 
-Perinci::CmdLine->new(
+Perinci::CmdLine::Any->new(
     log_any_app => 0,
     url => '/App/osnames/list_osnames',
 )->run;
