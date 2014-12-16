@@ -1,10 +1,11 @@
 package App::osnames;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
-
-# VERSION
 
 our %SPEC;
 
@@ -83,8 +84,7 @@ use Perinci::Sub::Gen::AccessTable qw(gen_read_table_func);
 
 my $res = gen_read_table_func(
     name       => 'list_osnames',
-    summary    => 'A collection of possible $^O ($OSNAME) values, '.
-        'along with description',
+    summary    => 'List possible $^O ($OSNAME) values, with description',
     description => <<'_',
 
 This list might be useful when coding, e.g. when you want to exclude or include
@@ -134,7 +134,7 @@ $SPEC{list_osnames}{examples} = [
 ];
 
 1;
-# ABSTRACT: List possible $^O ($OSNAME) values
+# ABSTRACT:
 
 =head1 SEE ALSO
 
