@@ -11,11 +11,11 @@ our %SPEC;
 
 our $data = [
 
-    ['aix', [qw/unix sysv/], 'IBM AIX'],
-    ['beos', [qw//], 'See also: haiku'],
-    ['cygwin', [qw/unix/], ''],
+    ['aix', [qw/unix sysv posix/], 'IBM AIX'],
+    ['beos', [qw/posix/], 'See also: haiku'],
+    ['cygwin', [qw/unix posix/], ''],
 
-    ['darwin', [qw/unix bsd/],
+    ['darwin', [qw/unix bsd posix/],
 
      'Mac OS X. Does not currently (2013) include iOS because Perl has not been
      ported to that platform yet (but PerlMotion is being developed)',
@@ -23,18 +23,18 @@ our $data = [
  ],
 
     ['dec_osf', [qw//], 'DEC Alpha'],
-    ['dragonfly', [qw/unix bsd/], 'DragonFly BSD'],
-    ['freebsd', [qw/unix bsd/], ''],
-    ['gnukfreebsd', [qw/unix bsd/], 'Debian GNU/kFreeBSD'],
-    ['haiku', [qw//], 'See also: beos'],
-    ['hpux', [qw/unix sysv/], 'HP-UX'],
-    ['interix', [qw/unix/], ''],
-    ['irix', [qw/unix sysv/], ''],
-    ['linux', [qw/unix/], ''], # unix-like
+    ['dragonfly', [qw/unix bsd posix/], 'DragonFly BSD'],
+    ['freebsd', [qw/unix bsd posix/], ''],
+    ['gnukfreebsd', [qw/unix bsd posix/], 'Debian GNU/kFreeBSD'],
+    ['haiku', [qw/posix/], 'See also: beos'],
+    ['hpux', [qw/unix sysv posix/], 'HP-UX'],
+    ['interix', [qw/unix posix/], ''],
+    ['irix', [qw/unix sysv posix/], ''],
+    ['linux', [qw/unix posix/], ''], # unix-like
     ['MacOS', [qw//], 'Mac OS Classic (which predates Mac OS X)'],
-    ['midnightbsd', [qw/unix bsd/], ''],
-    ['minix', [qw/unix/], ''], # unix-like
-    ['mirbsd', [qw/unix bsd/], 'MirOS BSD'],
+    ['midnightbsd', [qw/unix bsd posix/], ''],
+    ['minix', [qw/unix posix/], ''], # unix-like
+    ['mirbsd', [qw/unix bsd posix/], 'MirOS BSD'],
 
     ['MSWin32', [qw//],
 
@@ -45,10 +45,10 @@ our $data = [
 
  ],
 
-    ['netbsd', [qw/unix bsd/], ''],
-    ['openbsd', [qw/unix bsd/], ''],
-    ['sco', [qw/unix sysv/], 'SCO UNIX'],
-    ['solaris', [qw/unix sysv/], 'This includes the old SunOS.'],
+    ['netbsd', [qw/unix bsd posix/], ''],
+    ['openbsd', [qw/unix bsd posix/], ''],
+    ['sco', [qw/unix sysv posix/], 'SCO UNIX'],
+    ['solaris', [qw/unix sysv posix/], 'This includes the old SunOS.'],
 
     # These OS-es are listed on CPAN Testers OS Leaderboards, but I couldn't
     # google any reports on them. So I couldn't peek the $Config{osname} value.
@@ -135,6 +135,33 @@ $SPEC{list_osnames}{examples} = [
 
 1;
 # ABSTRACT:
+
+=head1 TAGS
+
+=over
+
+=item * unix
+
+Unix-like operating systems. This currently excludes beos/haiku.
+
+=item * bsd
+
+BSD-derived Unix operating systems.
+
+=item * sysv
+
+SysV-derived Unix operating systems.
+
+=item * posix
+
+For POSIX-compliant OSes, including fully-, mostly-, and largely-compliant ones
+(source: L<http://en.wikipedia.org/wiki/POSIX>).
+
+From what I can gather, dec_osf is not POSIX compliant, although there is a
+posix package for it.
+
+=back
+
 
 =head1 SEE ALSO
 
