@@ -1,5 +1,10 @@
 Revision history for App-osnames
 
+0.06    2014-12-18 (PERLANCAR)
+
+	- Add tag: posix, document the tags.
+
+
 0.05     2014-08-16 (SHARYANTO) - Happy 19th CPAN Day!
 
          - [build] CLI scripts are now generated automatically using
