@@ -47,7 +47,7 @@ _
 die "Can't generate list_osnames function: $res->[0] - $res->[1]"
     unless $res->[0] == 200;
 
-$SPEC{list_osnames}{args}{q}{pos} = 0;
+$SPEC{list_osnames}{args}{query}{pos} = 0;
 $SPEC{list_osnames}{examples} = [
     {
         argv    => [qw/ux/],
