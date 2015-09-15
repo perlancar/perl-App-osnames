@@ -43,6 +43,23 @@ _
     },
     enable_paging => 0, # there are only a handful of rows
     enable_random_ordering => 0,
+    hooks => {
+        after_fetch_data => sub {
+            my %args = @_;
+
+            # if run under pericmd-lite, convert tags array to comma-separated
+            # string so the result can be displayed as a text table
+            if ($args{_func_args}{-cmdline} &&
+                    $args{_func_args}{-cmdline}->isa("Perinci::CmdLine::Lite") &&
+                    ($args{_func_args}{-cmdline_r}{format} // '') !~ /json/) {
+                my $data = $args{_data};
+                for (@$data) {
+                    $_->[1] = join(",", @{$_->[1]});
+                }
+            }
+            return;
+        },
+    },
 );
 die "Can't generate list_osnames function: $res->[0] - $res->[1]"
     unless $res->[0] == 200;
