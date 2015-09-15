@@ -1,5 +1,14 @@
 Revision history for App-osnames
 
+0.10    2015-09-15 (PERLANCAR)
+
+	- [ux] Allow displaying result as text table under
+	  Perinci::CmdLine::Lite, by converting tags to comma-separated
+	  string.
+
+	- [ux] Change -V to -l (mnemonic: ls -l).
+
+
 0.09    2015-09-03 (PERLANCAR)
 
 	- No functional changes.
