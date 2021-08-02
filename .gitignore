@@ -2,3 +2,4 @@ App-osnames-*
 .build
 *~
 nytprof*
+.DS_Store
